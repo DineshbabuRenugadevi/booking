@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_22_154854) do
+ActiveRecord::Schema.define(version: 2023_06_03_021610) do
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "role", null: false
+    t.string "email", null: false
+    t.text "description"
+    t.date "date", null: false
+    t.time "start_at", null: false
+    t.time "end_at", null: false
+    t.string "roomtype", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", default: "", null: false

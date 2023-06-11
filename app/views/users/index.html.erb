@@ -15,8 +15,10 @@
                             <% @user.each do |user| %>
                                 <tr>
                                     <td>
-                                    <% if user_signed_in?  %>
-                                        <%= link_to user.username, edit_user_registration_path, class:"text-decoration-none" %></td> 
+                                    <% if user_signed_in? %>
+                                        <%= link_to user.username, edit_user_registration_path, class:"text-decoration-none" %></td>
+                                         <% else %>
+                                         <%= user.username %></td>
                                     <% end %></td>
                                     <td><%= user.email %></td>
                                 </tr>

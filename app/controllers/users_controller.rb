@@ -14,4 +14,9 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+      @user = User.find(params[:id])
+      @meetings = @user.meetings
+  end
+
 end

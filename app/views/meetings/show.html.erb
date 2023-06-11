@@ -1,0 +1,32 @@
+
+<div id="page-content">
+  <h2 class="text-center "><%= @meeting.name %></h2>
+    <div class="container">
+        <div class="row justify-content-md-center">
+        <div class="col-8 ">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+                <div class="card-header font-italic">
+                    by <%= @meeting.name %></br>
+                </div>
+                    <div class="card-body">
+                    <div class="card-text text-left"><b> Name:</b><%= @meeting.name %></div>
+                    <div class="card-text text-left"><b> Role:</b><%= @meeting.role %></div>
+                    <div class="card-text text-left"><b> Name:</b><%= @meeting.email %></div>
+                    <div class="card-text text-left"><b> Description:</b><%= simple_format(@meeting.description) %></div>
+                    <div class="card-text text-left"><b> Date:</b><%= @meeting.date.strftime("%d %b %y") %> </div>
+                    <div class="card-text text-left"><b>Start_at: </b><%= @meeting.start_at.strftime("%I : %M %p") %></div>
+                    <div class="card-text text-left"><b>End_at: </b><%= @meeting.end_at.strftime("%I : %M %p") %></div>
+                    <div class="card-text text-left"><b> Roomtype:</b><%= @meeting.roomtype %></div>
+                
+                </div>
+                <div class="card-footer text-muted">
+                    <small>Created <%= time_ago_in_words(@meeting.created_at) %> ago, 
+                    edited <%= time_ago_in_words(@meeting.updated_at) %> ago</small>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
